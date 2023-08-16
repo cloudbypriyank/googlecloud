@@ -1,5 +1,5 @@
-gcloud alpha services api-keys create --display-name="CloudHustlers" 
-KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=CloudHustlers")
+gcloud alpha services api-keys create --display-name="priyank" 
+KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=priyank")
 API_KEY=$(gcloud alpha services api-keys get-key-string $KEY_NAME --format="value(keyString)")
 export PROJECT_ID=$(gcloud config list --format 'value(core.project)')
 gsutil mb -p $PROJECT_ID -c regional -l us-central1 gs://$PROJECT_ID
