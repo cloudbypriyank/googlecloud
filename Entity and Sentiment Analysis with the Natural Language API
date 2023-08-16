@@ -15,8 +15,8 @@ Press Y Enter > Enter > Enter > Press N Enter
 -------------------------------------------
 
 gcloud services enable apikeys.googleapis.com
-gcloud alpha services api-keys create --display-name="CloudHustlers" 
-KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=CloudHustlers")
+gcloud alpha services api-keys create --display-name="priyank" 
+KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=priyank")
 API_KEY=$(gcloud alpha services api-keys get-key-string $KEY_NAME --format="value(keyString)")
 echo $API_KEY
 touch request.json
