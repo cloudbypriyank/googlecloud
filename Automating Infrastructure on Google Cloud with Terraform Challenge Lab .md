@@ -1,7 +1,7 @@
 ## `Lab Name` - *Automating Infrastructure on Google Cloud with Terraform: Challenge Lab [GSP345]*
 ## `Lab Link` - [Click Here](https://www.cloudskillsboost.google/focuses/42740?parent=catalog)
 
-## [YouTube Solution Link](https://youtu.be/wgAsPoGLbKE)
+## [YouTube Solution Link](https://youtu.be/ebpEH_qMiaQ)
 ## Task 1. Create the configuration files
 Run the below commands in the cloud shell terminal
 
@@ -363,4 +363,4 @@ terraform init
 terraform apply
 ```
 
-# Congratulations🎉! You're all done with this Challenge Lab.
+# Congratulations🎉!
