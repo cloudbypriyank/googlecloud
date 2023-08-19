@@ -91,4 +91,4 @@ SELECT * FROM ML.PREDICT(MODEL taxirides.MODEL_NAME,(
 
 ##
 
-## Congratulation!!!
+## Subscribe for more solutions!!!
