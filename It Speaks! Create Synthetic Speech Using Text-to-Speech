@@ -2,6 +2,6 @@ gcloud services enable texttospeech.googleapis.com
 sudo apt-get install -y virtualenv
 python3 -m venv venv
 source venv/bin/activate
-gcloud iam service-accounts create tts-qwiklab
-gcloud iam service-accounts keys create tts-qwiklab.json --iam-account tts-qwiklab@Project ID.iam.gserviceaccount.com
-export GOOGLE_APPLICATION_CREDENTIALS=tts-qwiklab.json
+gcloud iam service-accounts create tts-qwiklab1
+gcloud iam service-accounts keys create tts-qwiklab1.json --iam-account tts-qwiklab@Project ID.iam.gserviceaccount.com
+export GOOGLE_APPLICATION_CREDENTIALS=tts-qwiklab1.json
