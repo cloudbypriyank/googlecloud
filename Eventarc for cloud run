@@ -43,3 +43,9 @@ gcloud beta eventarc triggers create trigger-auditlog \
 --matching-criteria="methodName=storage.objects.create" \
 --service-account=${PROJECT_NUMBER}-compute@developer.gserviceaccount.com
 gsutil cp random.txt gs://${BUCKET_NAME}/random.txt
+
+---------------------------------------------------------------------
+FOR LAST TASK GO 
+From the Navigation menu, select IAM & Admin > Audit Logs.
+In the list of services, check the box for Google Cloud Storage.
+On the right hand side, click the LOG TYPE tab. Admin Write is selected by default, make sure you also select Admin Read, Data Read, Data Write and then click Save
