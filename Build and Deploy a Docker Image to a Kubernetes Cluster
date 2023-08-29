@@ -1,0 +1,14 @@
+export ZONE=
+--------------------------------
+export MACHINE_TYPE=
+------------------------------------
+wget https://github.com/atulguptag/Google-Cloud-Challenge-Labs-Soluitons/raw/main/Build%20and%20Deploy%20a%20Docker%20Image%20to%20a%20Kubernetes%20Cluster/resources-echo-web.tar.gz
+tar -xvf resources-echo-web.tar.gz
+gcloud container clusters create echo-cluster --num-nodes 2 --zone $ZONE --machine-type $MACHINE_TYPE
+gcloud builds submit --tag gcr.io/$DEVSHELL_PROJECT_ID/echo-app:v1 .
+gcloud container clusters get-credentials echo-cluster --zone $ZONE --project $DEVSHELL_PROJECT_ID
+kubectl create deployment echo-web --image=gcr.io/$DEVSHELL_PROJECT_ID/echo-app:v1
+kubectl expose deployment echo-web --type=LoadBalancer --port=80 --target-port=8000
+---------------------------------------------------------
+Congratulations🎉
+For this Lab Credits Goes to -- Atul Gupta 
