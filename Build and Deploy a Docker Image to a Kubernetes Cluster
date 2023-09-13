@@ -11,4 +11,4 @@ kubectl create deployment echo-web --image=gcr.io/$DEVSHELL_PROJECT_ID/echo-app:
 kubectl expose deployment echo-web --type=LoadBalancer --port=80 --target-port=8000
 ---------------------------------------------------------
 Congratulations🎉
-For this Lab Credits Goes to -- Atul Gupta 
+
