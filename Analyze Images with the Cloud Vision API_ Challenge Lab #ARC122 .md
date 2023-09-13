@@ -1,5 +1,4 @@
-# ARC122
-## Run in cloudshell
+
 ```cmd
 gcloud alpha services api-keys create --display-name="priyank" 
 KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=priyank")
