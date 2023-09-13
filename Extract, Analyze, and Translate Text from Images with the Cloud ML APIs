@@ -3,7 +3,7 @@ KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "
 API_KEY=$(gcloud alpha services api-keys get-key-string $KEY_NAME --format="value(keyString)")
 export PROJECT_ID=$(gcloud config list --format 'value(core.project)')
 gsutil mb -p $PROJECT_ID -c regional -l us-central1 gs://$PROJECT_ID
-curl -O https://github.com/siddharth7000/practice/blob/main/sign.jpg
+curl -O https://github.com/cloudbypriyank/googlecloud/blob/main/practice%20/sign.jpg
 gsutil cp sign.jpg gs://$PROJECT_ID/sign.jpg
 gsutil acl ch -u AllUsers:R gs://$PROJECT_ID/sign.jpg
 touch ocr-request.json
