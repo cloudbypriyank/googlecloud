@@ -65,11 +65,7 @@ If asking choose y/n then press "y", and then hit Enter.
 
 * Click on `Add roles and features`.
 
-![Alt text](/Configure%20Secure%20RDP%20using%20a%20Windows%20Bastion%20Host/img1.png)
-![Alt text](/Configure%20Secure%20RDP%20using%20a%20Windows%20Bastion%20Host/img2.png)
-![Alt text](/Configure%20Secure%20RDP%20using%20a%20Windows%20Bastion%20Host/img3.png)
-![Alt text](/Configure%20Secure%20RDP%20using%20a%20Windows%20Bastion%20Host/img4.png)
-![Alt text](/Configure%20Secure%20RDP%20using%20a%20Windows%20Bastion%20Host/img5.png)
+
 
 
 * Click *next* > *next* > *Install*
