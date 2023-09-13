@@ -6,7 +6,7 @@ export EMAIL=
 ```
 
 ```bash
-#----DO NOT CHANGE ANYTHING BELOW--
+
 export CLUSTER_NAME=cloudbypriyank
 export ZONE=us-central1-b
 export REGION=us-central1
