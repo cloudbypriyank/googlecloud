@@ -1,5 +1,5 @@
-## `Lab Name` - *Automating Infrastructure on Google Cloud with Terraform: Challenge Lab [GSP345]*
-## `Lab Link` - [Click Here](https://www.cloudskillsboost.google/focuses/42740?parent=catalog)
+
+
 
 ## [YouTube Solution Link](https://youtu.be/ebpEH_qMiaQ)
 ## Task 1. Create the configuration files
@@ -268,7 +268,7 @@ module "vpc" {
             subnet_region         = "us-east1"
             subnet_private_access = "true"
             subnet_flow_logs      = "true"
-            description           = "Subscribe TO ATUL GUPTA"
+            description           = "cloudbypriyank"
         },
     ]
 }
@@ -363,4 +363,3 @@ terraform init
 terraform apply
 ```
 
-# Congratulations🎉!
