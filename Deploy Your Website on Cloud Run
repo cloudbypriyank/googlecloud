@@ -5,7 +5,7 @@ RUN ALL IN CLOUD SHELL
 gcloud services enable artifactregistry.googleapis.com \
     cloudbuild.googleapis.com \
     run.googleapis.com
-git clone https://github.com/googlecodelabs/monolith-to-microservices.git
+git clone https://github.com/cloudbypriyank/googlecloud/blob/main/monolith-to-microservices-master.git
 cd ~/monolith-to-microservices./setup.sh
 ./setup.sh
 cd ~/monolith-to-microservices/monolith
