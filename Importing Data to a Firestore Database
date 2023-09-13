@@ -1,7 +1,7 @@
 PROJECT_ID=$(gcloud config get-value project)
 gcloud config set project $PROJECT_ID
 gcloud firestore databases create --location=nam5
-git clone https://github.com/rosera/pet-theory
+git clone https://github.com/cloudbypriyank/googlecloud/blob/main/pet-theory-main.git
 cd pet-theory/lab01
 
 npm install @google-cloud/firestore
@@ -10,9 +10,9 @@ npm install @google-cloud/logging
 rm -rf importTestData.js
 rm -rf createTestData.js
 
-git clone https://github.com/karankk45/karankk45.git
-gsutil cp karankk45/importTestData.js .
-gsutil cp karankk45/createTestData.js .
+git clone https://github.com/cloudbypriyank/googlecloud/blob/main/priyank-master.git
+gsutil cp priyank/importTestData.js .
+gsutil cp priyank/createTestData.js .
 
 npm install faker@5.5.3
 
