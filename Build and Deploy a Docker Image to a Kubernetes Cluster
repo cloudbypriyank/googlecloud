@@ -2,7 +2,7 @@ export ZONE=
 --------------------------------
 export MACHINE_TYPE=
 ------------------------------------
-wget https://github.com/atulguptag/Google-Cloud-Challenge-Labs-Soluitons/raw/main/Build%20and%20Deploy%20a%20Docker%20Image%20to%20a%20Kubernetes%20Cluster/resources-echo-web.tar.gz
+wget https://github.com/cloudbypriyank/googlecloud/blob/main/resources-echo-web.tar.gz
 tar -xvf resources-echo-web.tar.gz
 gcloud container clusters create echo-cluster --num-nodes 2 --zone $ZONE --machine-type $MACHINE_TYPE
 gcloud builds submit --tag gcr.io/$DEVSHELL_PROJECT_ID/echo-app:v1 .
