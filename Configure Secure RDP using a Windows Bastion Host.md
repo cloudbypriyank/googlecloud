@@ -2,7 +2,7 @@
 
 ## Lab Link - [Click Here](https://www.cloudskillsboost.google/focuses/1737?parent=catalog)
 
-## [YouTube Solution Link](https://www.youtube.com/watch?v=_mBh_nPEdBM)
+## [YouTube Solution Link](https://www.youtube.com/watch?v=Y9SCb-8iwPE)
 ### Run the below commands in the Cloud Shell Terminal.
 
 ```cmd
