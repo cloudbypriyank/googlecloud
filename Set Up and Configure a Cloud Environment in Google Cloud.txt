@@ -1,4 +1,5 @@
-Firstly Let's Create Environment Variables!!
+FOLLOW THE VIDEO YOU WILL NOT GET ANY ERROR
+---------------------------------------------------------
 
 export USER_NAME2=
 
