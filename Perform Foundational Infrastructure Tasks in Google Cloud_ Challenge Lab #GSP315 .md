@@ -1,5 +1,5 @@
-# GSP315
-## Run in cloudshell
+# FOLLOW THE VIDEO YOU WILL NOT GET ANY ERROR
+---------------------------------------------------------
 ```cmd
 export BUCKET_NAME=
 ```
@@ -109,5 +109,4 @@ gcloud functions deploy $FUNCTION_NAME \
 curl -o map.jpg https://storage.googleapis.com/cloud-training/gsp315/map.jpg
 gsutil cp map.jpg gs://$BUCKET_NAME/map.jpg
 ```
-## Copy username 2
-## Go to IAM > In search box paste your username 2 > Select that username > click REMOVE ACCESS
+
