@@ -9,7 +9,7 @@ export PRODUCTS_IDENTIFIER=
 export FRONTEND_IDENTIFIER=
 
 
-git clone https://github.com/googlecodelabs/monolith-to-microservices.git
+git clone https://github.com/cloudbypriyank/googlecloud/blob/main/monolith-to-microservices-master.git
 
 cd ~/monolith-to-microservices
 ./setup.sh
