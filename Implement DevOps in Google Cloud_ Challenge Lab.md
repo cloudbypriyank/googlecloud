@@ -174,7 +174,5 @@ git add .
 git commit -m "Subscribe to priyank" 
 git push -u origin master
 
-#--FOR LAST TASK : GO TO CLOUD BUILD > HISTORY--
-#---CLICK SECOND FAILED ONE(dev) > CLICK RETRY
-```
+
 
