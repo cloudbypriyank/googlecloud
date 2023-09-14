@@ -1,5 +1,4 @@
 
-```cmd
 gcloud alpha services api-keys create --display-name="priyank" 
 KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=priyank")
 export API_KEY=$(gcloud alpha services api-keys get-key-string $KEY_NAME --format="value(keyString)")
@@ -47,4 +46,3 @@ cat > request.json <<EOF
 EOF
 curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json  https://vision.googleapis.com/v1/images:annotate?key=${API_KEY} -o landmark-response.json
 gsutil cp landmark-response.json gs://$PROJECT_ID-bucket
-```
