@@ -31,13 +31,6 @@ WHERE
   AND passenger_count > PASSENGER_COUNT
 ```
 
-## 
-
-
-
-## 
-
-#### Replace the MODEL_NAME , FARE_AMOUNT , TABLE_NAME 
 
 ##
 
@@ -61,10 +54,6 @@ SELECT * FROM taxirides.TABLE_NAME
 ### 
 
 
-
-## 
-
-#### Replace the MODEL_NAME
 ##
 
 ```bash
@@ -79,4 +68,3 @@ SELECT * FROM ML.PREDICT(MODEL taxirides.MODEL_NAME,(
 
 ##
 
-## Subscribe for more solutions!!!
