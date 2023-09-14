@@ -1,16 +1,4 @@
 
-# Engineer Data in Google Cloud: Challenge Lab
-
-
-##### Navigate to Bigquery :-  
-
-
-
-
-
-## 
-
-#### Replace the TABLE_NAME , FARE_AMOUNT , TRIP_DISTANCE , FARE_AMOUNT_NUMBER ,PASSENGER_COUNT
 
 
 ##
