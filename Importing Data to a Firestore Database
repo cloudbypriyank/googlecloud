@@ -1,3 +1,8 @@
+FOLLOW THE VIDEO YOU WILL NOT GET ANY ERROR
+---------------------------------------------------------
+
+
+
 PROJECT_ID=$(gcloud config get-value project)
 gcloud config set project $PROJECT_ID
 gcloud firestore databases create --location=nam5
