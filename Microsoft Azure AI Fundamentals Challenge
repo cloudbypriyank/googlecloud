@@ -1,0 +1,481 @@
+1. You want to create a model to predict sales of ice cream based on historic data that includes daily ice cream sales totals and weather measurements. Which Azure service should you use? 
+
+Azure Machine Learning
+That is correct. Azure Machine Learning enables you to train a predictive model from the existing data.
+
+
+Azure AI Bot Service
+
+Azure AI Language
+2. You are designing an AI application that uses images to detect cracks in car windshields and warn drivers when a windshield should be repaired or replaced. What AI workload is described? ​​
+
+Computer Vision
+That is correct. Images of the car windshield can be analyzed with computer vision and classified into groups based on windshield condition.
+
+
+Anomaly Detection
+3. A predictive app provides audio output for visually impaired users. Which principle of Responsible AI is reflected here? 
+
+Transparency
+That is incorrect. Transparency is about fully communicating the purpose of the system, how it works, and what limitations may be expected.
+
+
+Inclusiveness
+That is correct. Inclusiveness is about how AI should bring benefits to all parts of society, regardless of physical ability, gender, sexual orientation, ethnicity, or other factors.
+
+
+-
+
+
+
+1. You want to create a model to predict the cost of heating an office building based on its size in square feet and the number of employees working there. What kind of machine learning problem is this? 
+
+Regression
+Correct. Regression models predict numeric values.
+
+
+Classification
+Incorrect. Classification models predict the class to which an observed case belongs.
+
+
+Clustering
+2. You need to evaluate a classification model. Which metric can you use? 
+
+Mean squared error (MSE)
+
+Precision
+Correct. Precision is a useful metric for evaluating classification models.
+
+
+Silhouette
+Incorrect. Silhouette is used to evaluate clustering models.
+
+3. In deep learning, what is the purpose of a loss function? 
+
+To remove data for which no known label values are provided
+
+To evaluate the aggregate difference between predicted and actual label values
+Correct. A loss function determines the overall variance, or loss, between predicted and actual label values.
+
+
+To calculate the cost of training a neural network rather than a statistical model
+Incorrect. A loss function does not calculate cost.
+
+4. What does automated machine learning in Azure Machine Learning enable you to do? 
+
+Automatically deploy new versions of a model as they're trained
+
+Automatically provision Azure Machine Learning workspaces for new data scientists in an organization
+Incorrect. Automated machine learning does not automate workspace provisioning.
+
+
+Automatically run multiple training jobs using different algorithms and parameters to find the best model
+Correct. Automated machine learning runs multiple training jobs, varying algorithms and parameters, to find the best model for your data.
+
+
+
+1. How are ChatGPT, OpenAI, and Azure OpenAI related? 
+
+Azure OpenAI is Microsoft's version of ChatGPT, a chatbot that uses generative AI models.
+
+ChatGPT and OpenAI are chatbots that generate natural language, code, and images. Azure OpenAI provides access to these two chatbots.
+Incorrect. While ChatGPT is a chatbot, OpenAI is a research company that provides access to AI models. Azure OpenAI also provides access to many of these AI models.
+
+
+OpenAI is a research company that developed ChatGPT, a chatbot that uses generative AI models. Azure OpenAI provides access to many of OpenAI's AI models.
+Correct.
+
+2. You would like to summarize a paragraph of text. Which generative AI model family would you use to solve for this workload? 
+
+GPT.
+Correct.
+
+
+Codex.
+
+Dall-E.
+3. What is one action Microsoft takes to support ethical AI practices in Azure OpenAI? 
+
+Provides Transparency Notes that share how technology is built and asks users to consider its implications.
+Correct.
+
+
+Logs users out of Azure OpenAI Studio after a period of inactivity to ensure it's only used by one user.
+
+Allows users to build any application, regardless of harmful effects, to ensure fairness.
+Incorrect. Microsoft's Responsible AI principle, fairness, says AI systems shouldn't make decisions that discriminate or bias a group or individual. Harmful use of Azure OpenAI isn't permitted.
+
+
+1. An automobile dealership wants to use historic car sales data to train a machine learning model. The model should predict the price of a pre-owned car based on its make, model, engine size, and mileage. What kind of machine learning model should the dealership use automated machine learning to create? 
+
+Classification
+Incorrect. To predict a numeric value, use a regression model.
+
+
+Regression
+Correct. To predict a numeric value, use a regression model.
+
+
+Time series forecasting
+2. A bank wants to use historic loan repayment records to categorize loan applications as low-risk or high-risk based on characteristics like the loan amount, the income of the borrower, and the loan period. What kind of machine learning model should the bank use automated machine learning to create? 
+
+Classification
+Correct. To predict a category, or class, use a classification model.
+
+
+Regression
+Incorrect. To predict a category, or class, use a classification model.
+
+
+Time series forecasting
+3. You want to use automated machine learning to train a regression model with the best possible R2 score. How should you configure the automated machine learning experiment? 
+
+Set the Primary metric to R2 score
+Correct. The primary metric determines the metric used to evaluate the best performing model.
+
+
+Block all algorithms other than GradientBoosting
+Incorrect. The choice of algorithms does not determine the metric used to evaluate the best performing model
+
+1. In Azure Machine Learning studio, what can you use to author regression machine learning pipelines using a drag-and-drop interface? 
+
+Notebooks
+Incorrect. You can use Notebooks to author machine learning projects with code.
+
+
+Automated machine learning
+
+Designer
+Correct. You can use Designer to author regression pipelines with a drag-and-drop interface.
+
+2. You are creating a training pipeline for a regression model. You use a dataset that has multiple numeric columns in which the values are on different scales. You want to transform the numeric columns so that the values are all on a similar scale. You also want the transformation to scale relative to the minimum and maximum values in each column. Which module should you add to the pipeline? 
+
+Select Columns in a Dataset
+Incorrect. When you transform numeric data to be on a similar scale, use a Normalize Data module.
+
+
+Clean Missing Data
+
+Normalize Data
+Correct. When you transform numeric data to be on a similar scale, use a Normalize Data module.
+
+3. Why do you split data into training and validation sets? 
+
+Data is split into two sets in order to create two models, one model with the training set and a different model with the validation set.
+
+Splitting data into two sets enables you to train the model with the training set and test the model on unseen data from the test set.
+Correct. When you test the model with unseen data from the test set, you can compare the model's predicted labels against the test set's labels.
+
+1. You're using Azure Machine Learning designer to create a training pipeline for a binary classification model. You've added a dataset containing features and labels, a Two-Class Decision Forest module, and a Train Model module. You plan to use Score Model and Evaluate Model modules to test the trained model with a subset of the dataset that wasn't used for training. What's another module should you add? 
+
+Join Data
+
+Split Data
+Correct. Use a Split Data module to randomly split a dataset into training and validation subsets.
+
+
+Select Columns in Dataset
+Incorrect. Use a Split Data module to randomly split a dataset into test and validation subsets.
+
+2. You use an Azure Machine Learning designer pipeline to train and test a binary classification model. You review the model's performance metrics in an Evaluate Model module, and note that it has an AUC score of 0.3. What can you conclude about the model? 
+
+The model can explain 30% of the variance between true and predicted labels.
+
+The model predicts accurately for 70% of test cases.
+Incorrect. An AUC of 0.5 is what you'd expect with random prediction of a binary model.
+
+
+The model performs worse than random guessing.
+Correct. An AUC of 0.5 is what you'd expect with random prediction of a binary model.
+
+3. You use Azure Machine Learning designer to create a training pipeline for a classification model. What must you do before deploying the model as a service? 
+
+Create an inference pipeline from the training pipeline
+Correct. You must create an inference pipeline to deploy as a service.
+
+1. You plan to use Azure AI Custom Vision to train an image classification model. You want to create a resource that can only be used for model training, and not for prediction. Which kind of resource should you create in your Azure subscription? 
+
+Custom Vision
+Correct: When you create a Custom Vision resource, you can specify whether it is to be used for training, prediction, or both.
+
+
+Azure AI services
+
+Computer Vision
+2. You train an image classification model that achieves less than satisfactory evaluation metrics. How might you improve it? 
+
+Reduce the size of the images used to train the model.
+
+Add a new label for "unknown" classes.
+
+Add more images to the training set.
+Correct: Generally, adding more images to the project and retraining the model is likely to improve performance.
+
+3. You have published an image classification model. What information must you provide to developers who want to use it? 
+
+Only the project ID.
+Incorrect: The project ID on its own is not enough information to use the published model
+
+
+The project ID, the model name, and the key and endpoint for the prediction resource
+Correct: To use a published model, you need the project ID, the model name, and the key and endpoint for the prediction resource.
+
+1. Which of the following results does an object detection model typically return for an image? 
+
+A class label and probability score for the image
+Incorrect: The classes returned by an object detection model are applicable to individual objects in the image, not the image as a whole
+
+
+Bounding box coordinates that indicates the region of the image where all of the objects it contains are located
+
+A class label, probability, and bounding box for each object in the image
+Correct: An object detection model predicts a class label, probability, and bounding box for each object in the image
+
+2. You plan to use a set of images to train an object detection model, and then publish the model as a predictive service. You want to use a single Azure resource with the same key and endpoint for training and prediction. What kind of Azure resource should you create? 
+
+Azure AI services
+Correct: An Azure AI services resource can be used for both training and prediction.
+
+
+Custom Vision
+Incorrect: Creating a Custom Vision resource for both training and prediction results in two separate resources being provisioned, each with their own key and endpoint.
+
+1. You plan to use Azure AI Face to detect human faces in an image. How does the service indicate the location of the faces it detects? 
+
+A pair of coordinates for each face, indicating the center of the face
+Incorrect: The locations of detected faces are indicated by coordinates for a rectangular bounding box
+
+
+Two pairs of coordinates for each face, indicating the location of the eyes
+
+A set of coordinates for each face, defining a rectangular bounding box around the face
+Correct: The locations of detected faces are indicated by coordinates for a rectangular bounding box
+
+2. What is one aspect that may impair facial detection? 
+
+Glasses
+
+Extreme angles
+Correct: Best results are obtained when the faces are full-frontal or as near as possible to full-frontal
+
+1. You want to extract text from images and then use Azure AI Language to analyze the text. You want developers to require only one key and endpoint to access all of your services. What kind of resource should you create in your Azure subscription? 
+
+Computer Vision
+Incorrect. This resource type only supports image analysis. A separate resource (with its own key and endpoint) would be required for text analytics with Azure AI Language.
+
+
+Azure AI services
+Correct. An Azure AI services resource supports both Azure AI Computer Vision for text extraction, and Azure AI Language for text analytics.
+
+
+Language
+2. You plan to use Azure AI Computer Vision's Read API. What results can the Read API provide? 
+
+Results arranged in pages, lines, and words
+Correct: The Read API takes an image and extracts the words, organizing the results by page and line.
+
+1. You plan to use Azure AI Document Intelligence's prebuilt receipt model. Which kind of Azure resource should you create? 
+
+Computer Vision resource
+Incorrect: The Computer Vision resource type does not include Azure AI Document Intelligence.
+
+
+Form Recognizer or Azure AI services resource
+Correct: Both the Form Recognizer resource and Azure AI services resource provide access to Azure AI Document Intelligence.
+
+
+Only Form Recognizer resource
+2. You are using Azure AI Document Intelligence to analyze receipts that you have scanned into JPG format images. What is the maximum file size of JPG file you can submit to the prebuilt receipt model? 
+
+2 MB
+Incorrect: The maximum file size for the prebuilt receipt model is 50 MB
+
+
+50 MB
+Correct: The maximum file size for the prebuilt receipt model is 50 MB
+
+1. You want to use Azure AI Language to determine the key talking points in a text document. Which feature of the service should you use? 
+
+Sentiment analysis
+Incorrect. Sentiment analysis returns a numeric score indicating how positive or negative the text is.
+
+
+Key phrase extraction
+Correct. Key phrases can be used to identify the main talking points in a text document.
+
+
+Entity detection
+2. You use Azure AI Language to perform sentiment analysis on a sentence. The confidence scores .04 positive, .36 neutral, and .6 negative are returned. What do these confidence scores indicate about the sentence sentiment? 
+
+The document is positive.
+
+The document is neutral.
+
+The document is negative.
+Correct. The sentiment is most likely the type with the highest confidence score, in this case .6 negative.
+
+3. When might you see NaN returned for a score in language detection? 
+
+When the score calculated by the service is outside the range of 0 to 1
+
+When the predominant language in the text is mixed with other languages
+Incorrect. The service will return a score of less than 1 for mixed language text, using the predominant language in the text.
+
+
+When the language is ambiguous
+Correct. The service will return NaN when it cannot determine the language in the provided text.
+
+1. You plan to build an application that uses Azure AI Speech to transcribe audio recordings of phone calls into text, and then submits the transcribed text to Azure AI Language to extract key phrases. You want to manage access and billing for the application services in a single Azure resource. Which type of Azure resource should you create? 
+
+Speech
+Incorrect. This resource would support speech transcription, but not key phrase extraction.
+
+
+Language
+
+Azure AI services
+Correct. This resource would support both the Azure AI Speech and Azure AI Language services.
+
+2. You want to use Azure AI Speech service to build an application that reads incoming email message subjects aloud. Which API should you use? 
+
+Speech to text
+
+Text to speech
+Correct. The Text to speech API converts text to audible speech.
+
+1. You're developing an application that must take English input from a microphone and generate a real-time text-based transcription in Hindi. Which service should you use? 
+
+Azure AI Translator
+Incorrect. Azure AI Translator can translate from a text source, but not from an audio source.
+
+
+Azure AI Speech
+Correct. Azure AI Speech can translate from audio sources to text.
+
+
+Azure AI Language
+2. You need to use Azure AI Translator to translate email messages from Spanish into both English and French. What is the most efficient way to accomplish this goal? 
+
+Make a single call to the service; specifying a "from" language of "es," a "to" language of "en," and another "to" language of "fr."
+Correct. You can specify a single "from" language and multiple "to" languages.
+
+1. You need to provision an Azure resource that will be used to author a new conversational language understanding application. What kind of resource should you create? 
+
+Custom Language
+Incorrect. Custom Language is not an available type of Azure resource.
+
+
+Language
+Correct. To author a conversational language understanding model, you need a Language resource.
+
+
+Azure AI services
+2. You are authoring a conversational language understanding application to support an international clock. You want users to be able to ask for the current time in a specified city, for example "What is the time in London?". What should you do? 
+
+Define a "city" entity and a "GetTime" intent with utterances that indicate the city entity.
+Correct. The intent encapsulates the task (getting the time) and the entity specifies the item to which the intent is applied (the city).
+
+
+Create an intent for each city, each with an utterance that asks for the time in that city.
+Incorrect. The intent is the same (get the time), the city varies and can be identified as an entity.
+
+
+Add the utterance "What time is it in city" to the "None" intent.
+3. You have published your conversational language understanding application. What information does a client application developer need to get predictions from it? 
+
+The endpoint and key for the application's prediction resource
+Correct. Client applications must connect to the endpoint of the prediction resource, specifying an associated authentication key.
+
+1. Your organization has an existing frequently asked questions (FAQ) document. You need to create a knowledge base that includes the questions and answers from the FAQ with the least possible effort. What should you do? 
+
+Create an empty knowledge base, and then manually copy and paste the FAQ entries into it.
+Incorrect. While you could do it this way, importing there's an option that requires less effort.
+
+
+Import the existing FAQ document into a new knowledge base.
+Correct. You can import question and answer pairs from an existing FAQ document into a question answering knowledge base.
+
+
+Import a pre-defined chit-chat data source.
+2. You want to create a knowledge base for bots. What capability would you use? 
+
+Conversational Language Understanding
+
+Question Answering
+That is correct.
+
+
+Optical Character Recognition
+That is incorrect.
+
+3. You need to deliver a support bot for internal use in your organization. Some users want to be able to submit questions to the bot using Microsoft Teams, others want to use a web chat interface on an internal web site. What should you do? 
+
+Create a knowledge base. Then create a bot for the knowledge base and connect the Web Chat and Microsoft Teams channels for your bot
+Correct. The Microsoft Teams channel enables your bot to receive and respond to messages in Microsoft Teams, and the Web Chat channel enables interactions through a web chat interface.
+
+
+Create a knowledge base. Then create two bots that use the same knowledge base - one bot connected to the Microsoft Teams channel, and the other to the Web Chat channel.
+
+
+1. What is meant by seasonal data? 
+
+Data based on the time or year it was recorded.
+Incorrect. Seasonal does not refer to the seasons of the year, in this case.
+
+
+How far apart the values are by default for each recorded period.
+
+Data occurring at regular intervals.
+Correct. Seasonal times series is considered to be a pattern in your data that occurs at regular intervals. Examples would be hourly, daily, or monthly patterns.
+
+2. What is the purpose of specifying granularity in your JSON data object? 
+
+It is used to indicate the recording pattern of the data.
+Correct. Granularity would be specified as hourly, daily, weekly, etc.
+
+
+It tells the service how to chunk up the results that are returned for review, independent of the time series data pattern.
+Incorrect. Granularity is not used to modify the results returned by the service.
+
+
+It is used to indicate the range of acceptable values.
+3. How does Azure AI Anomaly Detector evaluate real-time data for anomalies? 
+
+It collects all the values in a window of time and evaluates them all at once.
+Incorrect. This is an example of batch processing, not real-time.
+
+
+It evaluates the current value against the previous value.
+Correct. It evaluates previously seen data points to determine if your latest one is an anomaly.
+
+
+1. Which data format is accepted by Azure Cognitive Search when you're pushing data to the index? 
+
+CSV.
+
+SQL.
+Incorrect. SQL data isn't supported natively. You can either convert it to JSON or use an indexer that serializes the content for you.
+
+
+JSON.
+Correct. Cognitive Search can index JSON documents. JSON is also used to define index schemas, indexers, and data source objects.
+
+2. Which explanation best describes an indexer and an index? 
+
+An indexer converts documents into JSON and forwards them to a search engine for indexing.
+Correct. An indexer serializes a source document into JSON before passing it to a search engine for indexing. An indexer automates several steps of data ingestion, reducing the amount of code you need to write.
+
+
+An indexer can be used instead of an index if the files are already in the proper format.
+Incorrect. An indexer is used to populate an index, but isn't a replacement for an index.
+
+
+An indexer is only used for AI enrichment and skillset execution.
+3. If you set up a search index without including a skillset, which would you still be able to query? 
+
+Sentiment.
+
+Text content.
+Correct. Cognitive Search is used for full text search over indexes containing alphanumeric content.
+
+
