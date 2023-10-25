@@ -1,6 +1,4 @@
-<!-- Start of banner code -->
-<a href="https://shrinkme.io/ref/117353735570044136721"><img src="https://shrinkme.io/banners/ref/728x90GIF.gif" title="Make short links and earn the biggest money" /></a>
-<!-- End of banner code -->
+
 
 export PROJECT_ID=$(gcloud config get-value project)
 gsutil mb -p $PROJECT_ID -c regional -l us-central1 gs://$PROJECT_ID-bucket
