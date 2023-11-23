@@ -174,3 +174,12 @@ git push -u origin master
 
 
 
+
+
+```bash
+git add .
+git commit -m "to dev branch" 
+git push -u origin dev
+
+
+
