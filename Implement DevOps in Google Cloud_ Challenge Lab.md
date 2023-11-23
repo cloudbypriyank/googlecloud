@@ -1,6 +1,4 @@
 
-# FOLLOW THE VIDEO YOU WILL NOT GET ANY ERROR
----------------------------------------------------------
 
 ```bash
 export EMAIL=
