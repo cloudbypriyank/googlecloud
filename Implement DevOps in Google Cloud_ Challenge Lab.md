@@ -180,5 +180,10 @@ git add .
 git commit -m "to dev branch" 
 git push -u origin dev
 
+-------------------
+git add .
+git commit -m "to master branch" 
+git push -u origin master
+
 
 
