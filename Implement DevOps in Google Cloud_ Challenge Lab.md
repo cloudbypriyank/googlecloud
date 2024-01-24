@@ -1,9 +1,7 @@
-
-
 export EMAIL=
 
-
-export CLUSTER_NAME=cloudbypriyank
+#----DO NOT CHANGE ANYTHING BELOW--
+export CLUSTER_NAME=hello-cluster
 export ZONE=us-central1-b
 export REGION=us-central1
 export REPO=my-repository
@@ -19,7 +17,7 @@ git config --global user.name student
 gcloud artifacts repositories create $REPO \
     --repository-format=docker \
     --location=$REGION \
-    --description="Subscribe to priyank"
+    --description="Subscribe to quicklab"
 gcloud beta container --project "$PROJECT_ID" clusters create "$CLUSTER_NAME" --zone "$ZONE" --no-enable-basic-auth --cluster-version latest --release-channel "regular" --machine-type "e2-medium" --image-type "COS_CONTAINERD" --disk-type "pd-balanced" --disk-size "100" --metadata disable-legacy-endpoints=true  --logging=SYSTEM,WORKLOAD --monitoring=SYSTEM --enable-ip-alias --network "projects/$PROJECT_ID/global/networks/default" --subnetwork "projects/$PROJECT_ID/regions/$REGION/subnetworks/default" --no-enable-intra-node-visibility --default-max-pods-per-node "110" --enable-autoscaling --min-nodes "2" --max-nodes "6" --location-policy "BALANCED" --no-enable-master-authorized-networks --addons HorizontalPodAutoscaling,HttpLoadBalancing,GcePersistentDiskCsiDriver --enable-autoupgrade --enable-autorepair --max-surge-upgrade 1 --max-unavailable-upgrade 0 --enable-shielded-nodes --node-locations "$ZONE"
 kubectl create namespace prod	
 kubectl create namespace dev
@@ -30,7 +28,7 @@ gsutil cp -r gs://spls/gsp330/sample-app/* sample-app
 git init
 cd sample-app/
 git add .
-git commit -m "Subscribe to priyank" 
+git commit -m "Subscribe to quicklab" 
 git push -u origin master
 git branch dev
 git checkout dev
@@ -43,13 +41,13 @@ IMAGE=$(gcloud builds list --format="value(IMAGES)")
 sed -i "s/<version>/v1.0/g" cloudbuild-dev.yaml
 sed -i "s#<todo>#$IMAGE#g" dev/deployment.yaml
 git add .
-git commit -m "Subscribe to priyank" 
+git commit -m "Subscribe to quicklab" 
 git push -u origin dev
 git checkout master
 sed -i "s/<version>/v1.0/g" cloudbuild.yaml
 sed -i "s#<todo>#$IMAGE#g" prod/deployment.yaml
 git add .
-git commit -m "Subscribe to priyank" 
+git commit -m "Subscribe to quicklab" 
 git push -u origin master
 
 git checkout dev
@@ -109,7 +107,7 @@ IMAGE2=${IMAGE::-7}v1.0
 echo $IMAGE2
 sed -i "s#$IMAGE#$IMAGE2#g" dev/deployment.yaml
 git add .
-git commit -m "Subscribe to priyank" 
+git commit -m "Subscribe to quicklab" 
 git push -u origin dev
 git checkout master
 
@@ -166,21 +164,8 @@ sed -i "s/v1.0/v2.0/g" cloudbuild.yaml
 sed -i "s#$IMAGE#$IMAGE2#g" prod/deployment.yaml
 
 git add .
-git commit -m "Subscribe to priyank" 
+git commit -m "Subscribe to quicklab" 
 git push -u origin master
 
-
-
-
--------------------------------
-git add .
-git commit -m "to dev branch" 
-git push -u origin dev
-
--------------------
-git add .
-git commit -m "to master branch" 
-git push -u origin master
-
-
-
+#--FOR LAST TASK : GO TO CLOUD BUILD > HISTORY--
+#---CLICK SECOND FAILED ONE(dev) > CLICK RETRY
