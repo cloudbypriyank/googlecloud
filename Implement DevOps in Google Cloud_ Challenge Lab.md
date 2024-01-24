@@ -1,10 +1,7 @@
 
 
-```bash
 export EMAIL=
-```
 
-```bash
 
 export CLUSTER_NAME=cloudbypriyank
 export ZONE=us-central1-b
