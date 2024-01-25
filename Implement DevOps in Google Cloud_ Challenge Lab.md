@@ -2,8 +2,8 @@ export EMAIL=
 
 #----DO NOT CHANGE ANYTHING BELOW--
 export CLUSTER_NAME=hello-cluster
-export ZONE=us-central1-b
-export REGION=us-central1
+export ZONE=us-west1-c
+export REGION=us-west1
 export REPO=my-repository
 export PROJECT_ID=$(gcloud config get-value project)
 gcloud services enable container.googleapis.com \
