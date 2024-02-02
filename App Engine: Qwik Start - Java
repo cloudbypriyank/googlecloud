@@ -1,0 +1,13 @@
+git clone https://github.com/GoogleCloudPlatform/java-docs-samples.git
+cd java-docs-samples/appengine-java8/helloworld
+mvn clean
+mvn package
+mvn appengine:run
+gcloud app create
+nano pom.xml
+--------------------------------------------
+Change myProjectId to your Project ID
+
+save the file with CTRL + X > Y > Enter.
+-----------------------------------------------
+mvn package appengine:deploy
