@@ -1,0 +1,7 @@
+
+-----------------------------------------------------
+export TOPIC_NAME=MyTopic
+export SUBSCRIPTION_NAME=MySub
+
+gcloud pubsub topics create $TOPIC_NAME
+gcloud pubsub subscriptions create $SUBSCRIPTION_NAME --topic=$TOPIC_NAME
