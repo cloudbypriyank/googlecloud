@@ -23,7 +23,7 @@ touch outputs.tf
 touch variables.tf
 
 
-* (Paste it in variable.tf )
+------------------ (Paste it in variable.tf )
 
 
 variable "region" {
@@ -37,9 +37,9 @@ variable "zone" {
 variable "project_id" {
  default = "PROJECT_ID"
 }
-```
 
-* (Paste it in main.tf )
+
+ (Paste it in main.tf )
 
 
 terraform {
@@ -72,7 +72,7 @@ terraform init
 
 Task 2. Import infrastructure
 
-* (Paste it in modules/instances/instances.tf )
+ (Paste it in modules/instances/instances.tf )
 
 
 resource "google_compute_instance" "tf-instance-1" {
@@ -131,11 +131,11 @@ terraform plan
 terraform apply
 
 
-#############################################################################
+---------------------------------------
 
 Task 3. Configure a remote backend
 
-* Paste the below code in storage/storage.tf
+Paste the below code in storage/storage.tf
 
 
 resource "google_storage_bucket" "storage-bucket" {
@@ -146,7 +146,7 @@ resource "google_storage_bucket" "storage-bucket" {
 }
 
 
-* Add following to main.tf
+Add following to main.tf
 
 
 module "storage" {
@@ -178,18 +178,18 @@ terraform {
 }
 
 
-* Run this in CloudShell
+ Run this in CloudShell
 
 
 terraform init
 
 
 
-#############################################################################
+-------------------------
 
 Task 4. Modify and update infrastructure
 
-* Add following to instance.tf
+ Add following to instance.tf
 
 resource "google_compute_instance" "INSTANCE_NAME" {
   name         = "YOUR_INSTANCE_NAME"
@@ -212,14 +212,14 @@ resource "google_compute_instance" "INSTANCE_NAME" {
 }
 
 
-* Run this in CloudShell
+ Run this in CloudShell
 
 
 terraform init
 terraform apply
 
 
-#############################################################################
+--------------------------
 
  Task 5. Destroy resources
 
@@ -232,18 +232,17 @@ terraform init
 terraform apply
 
 
-* Go and `remove instance-3` from `instance.tf`
+ Go and `remove instance-3` from `instance.tf`
 
 
 terraform apply
 
+-----------------------------------
 
-#############################################################################
-
-## Task 6. Use a module from the Registry
+Task 6. Use a module from the Registry
 
 
-* (Paste it in main.tf)
+ (Paste it in main.tf)
 
 
 module "vpc" {
@@ -272,14 +271,14 @@ module "vpc" {
 }
 
 
-* Run this in CloudShell
+ Run this in CloudShell
 
 
 terraform init
 terraform apply
 
 
-* Go to Instance.tf and Update ALL with the following
+Go to Instance.tf and Update ALL with the following
 
 
 resource "google_compute_instance" "tf-instance-1"{
