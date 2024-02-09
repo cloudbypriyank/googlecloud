@@ -2,7 +2,7 @@
 
 
 
-## Task 1. Create the configuration files
+ Task 1. Create the configuration files
 Run the below commands in the cloud shell terminal
 
 
@@ -25,7 +25,7 @@ touch variables.tf
 
 * (Paste it in variable.tf )
 
-```cmd
+
 variable "region" {
  default = "YOUR_REGION"
 }
@@ -67,10 +67,10 @@ Run this in CloudShell :
 
 
 terraform init 
-```
+
 #############################################################################
 
-## Task 2. Import infrastructure
+Task 2. Import infrastructure
 
 * (Paste it in modules/instances/instances.tf )
 
@@ -114,56 +114,56 @@ resource "google_compute_instance" "tf-instance-2" {
     EOT
   allow_stopping_for_update = true
 }
-```
+
 
 Run this in CloudShell
 
-```cmd
+
 terraform import module.instances.google_compute_instance.tf-instance-1 [INSTANCE_ID_1]
-```
 
-```cmd
+
+
 terraform import module.instances.google_compute_instance.tf-instance-2 [INSTANCE_ID_2]
-```
 
-```cmd
+
+
 terraform plan
 terraform apply
-```
+
 
 #############################################################################
 
-## Task 3. Configure a remote backend
+Task 3. Configure a remote backend
 
 * Paste the below code in storage/storage.tf
 
-```cmd
+
 resource "google_storage_bucket" "storage-bucket" {
   name          = "YOUR_BUCKET_NAME"
   location      = "us"
   force_destroy = true
   uniform_bucket_level_access = true
 }
-```
+
 
 * Add following to main.tf
 
-```cmd
+
 module "storage" {
   source     = "./modules/storage"
 }
-```
+
 
 Run this in CloudShell
 
-```cmd
+
 terraform init
 terraform apply
-```
+
 
 * Update following code to main.tf
 
-```cmd
+
 terraform {
   backend "gcs" {
     bucket  = "YOUR_BUCKET_NAME"
@@ -176,22 +176,21 @@ terraform {
     }
   }
 }
-```
+
 
 * Run this in CloudShell
 
-```cmd
+
 terraform init
-```
+
 
 
 #############################################################################
 
-## Task 4. Modify and update infrastructure
+Task 4. Modify and update infrastructure
 
 * Add following to instance.tf
 
-```cmd
 resource "google_compute_instance" "INSTANCE_NAME" {
   name         = "YOUR_INSTANCE_NAME"
   machine_type = "n1-standard-2"
@@ -211,33 +210,33 @@ resource "google_compute_instance" "INSTANCE_NAME" {
     EOT
   allow_stopping_for_update = true
 }
-```
+
 
 * Run this in CloudShell
 
 
 terraform init
 terraform apply
-```
+
 
 #############################################################################
 
-## Task 5. Destroy resources
+ Task 5. Destroy resources
 
 
 terraform taint module.instances.google_compute_instance.INSTANCE_NAME
-```
 
-```
+
+
 terraform init
 terraform apply
-```
+
 
 * Go and `remove instance-3` from `instance.tf`
 
 
 terraform apply
-```
+
 
 #############################################################################
 
@@ -271,18 +270,18 @@ module "vpc" {
         },
     ]
 }
-```
+
 
 * Run this in CloudShell
 
-```cmd
+
 terraform init
 terraform apply
-```
+
 
 * Go to Instance.tf and Update ALL with the following
 
-```cmd
+
 resource "google_compute_instance" "tf-instance-1"{
   name         = "tf-instance-1"
   machine_type = "n1-standard-2"
@@ -325,22 +324,22 @@ resource "google_compute_instance" "tf-instance-2"{
     EOT
   allow_stopping_for_update = true
 }
-```
+
 
 * Run this in CloudShell
 
-```cmd
+
 terraform init
 terraform apply
-```
+
 
 #############################################################################
 
-## Task 7. Configure a firewall
+ Task 7. Configure a firewall
 
 * Add the following in main.tf
 
-```cmd
+
 resource "google_compute_firewall" "tf-firewall"{
   name    = "tf-firewall"
  network = "projects/YOUR_PROJECT_ID/global/networks/YOUR_VPC_Name"
@@ -353,12 +352,12 @@ resource "google_compute_firewall" "tf-firewall"{
   source_tags = ["web"]
   source_ranges = ["0.0.0.0/0"]
 }
-```
+
 
 * Run this in CloudShell
 
-```cmd
+
 terraform init
 terraform apply
-```
+
 
