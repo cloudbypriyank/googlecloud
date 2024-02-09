@@ -1,11 +1,11 @@
 
 
 
-## [YouTube Solution Link](https://youtu.be/ebpEH_qMiaQ)
+
 ## Task 1. Create the configuration files
 Run the below commands in the cloud shell terminal
 
-```cmd
+
 touch main.tf
 touch variables.tf
 mkdir modules
@@ -21,8 +21,7 @@ cd storage
 touch storage.tf
 touch outputs.tf
 touch variables.tf
-cd
-```
+
 
 * (Paste it in variable.tf )
 
@@ -42,7 +41,7 @@ variable "project_id" {
 
 * (Paste it in main.tf )
 
-```cmd
+
 terraform {
   required_providers {
     google = {
@@ -66,7 +65,7 @@ module "instances" {
 
 Run this in CloudShell : 
 
-```cmd
+
 terraform init 
 ```
 #############################################################################
@@ -75,7 +74,7 @@ terraform init
 
 * (Paste it in modules/instances/instances.tf )
 
-```cmd
+
 resource "google_compute_instance" "tf-instance-1" {
   name         = "tf-instance-1"
   machine_type = "n1-standard-1"
@@ -216,7 +215,7 @@ resource "google_compute_instance" "INSTANCE_NAME" {
 
 * Run this in CloudShell
 
-```cmd
+
 terraform init
 terraform apply
 ```
@@ -225,7 +224,7 @@ terraform apply
 
 ## Task 5. Destroy resources
 
-```cmd
+
 terraform taint module.instances.google_compute_instance.INSTANCE_NAME
 ```
 
@@ -236,7 +235,7 @@ terraform apply
 
 * Go and `remove instance-3` from `instance.tf`
 
-```cmd
+
 terraform apply
 ```
 
@@ -247,7 +246,7 @@ terraform apply
 
 * (Paste it in main.tf)
 
-```cmd
+
 module "vpc" {
     source  = "terraform-google-modules/network/google"
     version = "~> 6.0.0"
