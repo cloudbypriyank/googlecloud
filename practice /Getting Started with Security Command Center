@@ -1,0 +1,7 @@
+
+
+curl -LO https://github.com/cloudbypriyank/googlecloud/blob/17c00a2964c8ea7ee85830ed4fa5128e794e312b/practice%20/gsp1124.sh
+
+sudo chmod +x gsp1124.sh
+
+./gsp1124.sh
