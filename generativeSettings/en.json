@@ -1,0 +1,12 @@
+{
+  "fallbackSettings": {
+    "selectedPrompt": "Default"
+  },
+  "languageCode": "en",
+  "knowledgeConnectorSettings": {
+    "business": "datastore",
+    "groundingSettings": {
+      "groundingConfidence": "VERY_HIGH"
+    }
+  }
+}

@@ -1,5 +1,0 @@
------------------------------------------------------
-export TOPIC_NAME=MyTopic
-
-
-gcloud pubsub topics create $TOPIC_NAME

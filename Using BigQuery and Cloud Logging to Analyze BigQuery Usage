@@ -1,6 +1,0 @@
-FOLLOW THE VIDEO FROM YOUTUBE
-
--------------------------------------------------------------------------------
-
-resource.type="bigquery_resource"
-protoPayload.methodName="jobservice.jobcompleted"

@@ -1,7 +1,0 @@
-
-
-curl -LO raw.githubusercontent.com/cloudbypriyank/googlecloud/main/practice%20/priyank.sh
-
-sudo chmod +x priyank.sh
-
-./priyank.sh
