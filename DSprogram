@@ -1,0 +1,95 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#define MAX 30
+int stack[MAX], top=-1;
+void push(); 
+int pop(); 
+int peek();
+void display();
+int isEmpty();
+int isFull();
+int main()
+{
+    int choice, topmost, val;
+    do
+    {
+        printf("***MAIN MENU***\n1. Push \n2. Pop \n3. Peek \n4. Display \n Enter your Choice")
+        scanf("%d",&choice)
+        printf("\n")
+        Switch(choice)
+        {
+            case 1: push()
+            break;
+            case 2: val = pop();
+            if(val!=-1)
+            printf("the value is popped is %d \n",val)
+            break;
+            case 3: topmost = peek;
+            printf("the topmost element is %d \n", topmost)
+            case 4: display()
+            break;
+            case 5: break;
+
+        }
+    } while (choice:=5);
+    return 0;
+  void push();
+  {
+    int val;
+    if(isFull)
+        printf("Stack is full");
+    
+    else
+     {
+         print("enter the value to be pushed:");
+         scanf("%d",&val)
+         stack[++top] = val;
+         printf("Successfully pushed\ ");
+     }
+  }
+  int pop()
+  if(isEmpty)
+     printf("Stack is Empty");
+  else
+  {
+    int val = stack[top]
+    top-1;
+    return val;
+  } 
+  int peek()
+  if(isEmpty)
+     printf("Stack is Empty");
+  else
+   {
+     int val = stack[top]
+     return val;
+   } 
+   void display()
+   {
+    int i;
+    if(isEmpty)
+     printf("stack is empty");
+    else
+    {
+        printf("The stack is:")
+        for(i=top;i>0;i--)
+        {
+            printf("\t %d", stack[i]);;
+        }
+        printf("\n");
+    }
+   }
+   int isEmpty()
+   {
+    if(top==-1)
+     return 1;
+    else
+      return 0;
+   }
+   int isFull()
+   if(top==MAX-1)
+     return 1;
+   else
+     return 0;
+}
