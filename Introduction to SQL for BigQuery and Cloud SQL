@@ -1,0 +1,9 @@
+export REGION=
+
+
+----------------
+curl -LO raw.githubusercontent.com/cloudbypriyank/googlecloud/main/gsp281.sh
+
+sudo chmod +x gsp281.sh
+
+./gsp281.sh
