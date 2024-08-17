@@ -13,9 +13,12 @@ LANGCHAIN_TRACING_V2=<your_value_here>
 LANGCHAIN_ENDPOINT=<your_value_here>
 LANGCHAIN_API_KEY=<your_value_here>
 LANGCHAIN_PROJECT=<your_value_here>
+```
 
-2) Email Generator
+## 2) Email Generator
+
 This module generates emails with the assistance of GPT. To use it, provide the file path and your OpenAPI key.
 
-3) Question Answering from CSV
+## 3) Question Answering from CSV
+
 This feature allows you to extract and answer questions from an uploaded CSV file using a Langchain agent. It requires an API key to generate responses.
