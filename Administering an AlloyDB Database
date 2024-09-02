@@ -28,6 +28,20 @@ Launch the PostgreSQL (psql) Client:
 -----------------------------------------
 psql -h $ALLOYDB -U postgres
 ------------------------------------------
+
++++++++++++++++++++++++++++++++++++
+In case if you got any error in psql cmd so use this - 
+Ensure that the IP address 10.51.0.2 is correct and that it is indeed the Private IP address of the AlloyDB instance.
+
+If you added the port number (:5432) directly in the IP address, try using just the IP without the port in the psql command.
+2. Correct the psql Command:
+When using psql, you should specify the IP address and port separately. Use this command:
+
+
+psql -h 10.51.0.2 -p 5432 -U postgres
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+---------------------------------------
+
 Enable the pgaudit Extension:
 
 Inside the psql prompt, run the following SQL commands:
