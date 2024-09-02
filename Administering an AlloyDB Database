@@ -1,50 +1,73 @@
-## Task 1: Examine a Database Flag
+Task 1: Examine a Database Flag
+1. Examine the Cluster Details
 
-# 1. Examine the Cluster Details
-#   - Navigate to AlloyDB > Clusters in the Google Cloud Console to view the cluster and instance details.
-#   - Note the Private IP address of the `lab-instance`.
+Navigate to AlloyDB > Clusters in the Google Cloud Console to view the cluster and instance details.
 
-# 2. Set the Private IP Address as an Environment Variable
-export ALLOYDB=<ALLOYDB_ADDRESS>  # Replace <ALLOYDB_ADDRESS> with the actual Private IP address
+Note the Private IP address of the lab-instance.
+
+2. Set the Private IP Address as an Environment Variable
+
+export ALLOYDB=<ALLOYDB_ADDRESS> # Replace <ALLOYDB_ADDRESS> with the actual Private IP address
 echo $ALLOYDB > alloydbip.txt
+<button onclick="navigator.clipboard.writeText('export ALLOYDB=<ALLOYDB_ADDRESS> # Replace <ALLOYDB_ADDRESS> with the actual Private IP address\necho $ALLOYDB > alloydbip.txt')">Copy Code</button>
 
-## Task 2: Setup a Database Extension
+Task 2: Setup a Database Extension
+1. SSH into the alloydb-client VM Instance
 
-# 1. SSH into the alloydb-client VM Instance
+2. Set the Environment Variable
 
-# 2. Set the Environment Variable
-#   - Launch the PostgreSQL (psql) Client:
+Launch the PostgreSQL (psql) Client:
+
 psql -h $ALLOYDB -U postgres
+<button onclick="navigator.clipboard.writeText('psql -h $ALLOYDB -U postgres')">Copy Code</button>
 
-#   - Enable the pgaudit Extension:
+Enable the pgaudit Extension:
+
 \c postgres
 CREATE EXTENSION IF NOT EXISTS pgaudit;
+<button onclick="navigator.clipboard.writeText('\c postgres\nCREATE EXTENSION IF NOT EXISTS pgaudit;')">Copy Code</button>
 
-#   - Verify the Extension:
+Verify the Extension:
+
 SELECT extname, extversion FROM pg_extension WHERE extname = 'pgaudit';
+<button onclick="navigator.clipboard.writeText('SELECT extname, extversion FROM pg_extension WHERE extname = \'pgaudit\';')">Copy Code</button>
 
-#   - Exit the PostgreSQL Client:
+Exit the PostgreSQL Client:
+
 \q
+<button onclick="navigator.clipboard.writeText('\q')">Copy Code</button>
 
-#   - Close the SSH Terminal:
+Close the SSH Terminal:
+
 exit
+<button onclick="navigator.clipboard.writeText('exit')">Copy Code</button>
 
-## Task 3: Create a Read Pool Instance for an Existing Cluster
+Task 3: Create a Read Pool Instance for an Existing Cluster
+1. Add a Read Pool Instance:
 
-# 1. Add a Read Pool Instance:
-#   - In the Google Cloud Console, navigate to AlloyDB > Clusters.
-#   - In the lab-cluster overview page, click on Add Read Pool or Add Read Pool Instance.
-#   - Set the Read pool instance ID to lab-instance-rp1, the Node count to 2, and select the machine type 2 vCPU, 16 GB.
-#   - Click Create Read Pool.
+In the Google Cloud Console, navigate to AlloyDB > Clusters.
 
-## Task 4: Setup Backups
+In the lab-cluster overview page, click on Add Read Pool or Add Read Pool Instance.
 
-# 1. Create an On-Demand Backup:
-#   - In the Google Cloud Console, navigate to AlloyDB > Backups.
-#   - Click on Create backup.
-#   - Ensure lab-cluster is selected as the source for the backup and enter lab-backup as the unique ID for the backup.
-#   - Click Create.
+Set the Read pool instance ID to lab-instance-rp1, the Node count to 2, and select the machine type 2 vCPU, 16 GB.
 
-# 2. View Backup Details:
-#   - After creating the backup, you can view the details using Cloud Shell:
+Click Create Read Pool.
+
+Task 4: Setup Backups
+1. Create an On-Demand Backup:
+
+In the Google Cloud Console, navigate to AlloyDB > Backups.
+
+Click on Create backup.
+
+Ensure lab-cluster is selected as the source for the backup and enter lab-backup as the unique ID for the backup.
+
+Click Create.
+
+2. View Backup Details:
+
+After creating the backup, you can view the details using Cloud Shell:
+
 gcloud beta alloydb backups list
+<button onclick="navigator.clipboard.writeText('gcloud beta alloydb backups list')">Copy Code</button>
+
