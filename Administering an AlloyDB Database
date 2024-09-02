@@ -1,4 +1,4 @@
-Task 1: Examine a Database Flag
+# Task 1: Examine a Database Flag
 Examine the Cluster Details:
 
 UI Step: Navigate to AlloyDB > Clusters in the Google Cloud Console to view the cluster and instance details.
