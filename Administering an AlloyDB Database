@@ -6,50 +6,55 @@ UI Step: Note the Private IP address of the lab-instance.
 Set the Private IP Address as an Environment Variable:
 
 Replace <ALLOYDB_ADDRESS> with the actual Private IP address you noted earlier.
-bash
-Copy code
-export ALLOYDB=<ALLOYDB_ADDRESS>
+-------------------------------------------------------------------------------
+export ALLOYDB=10.51.0.2:5432
+------------------------------------------------------------------------------
 echo $ALLOYDB > alloydbip.txt
+-----------------------------------------------------------------------------
+
+
 Task 2: Setup a Database Extension
+
 SSH into the alloydb-client VM Instance:
 
 UI Step: In the Google Cloud Console, go to Compute Engine > VM Instances.
 UI Step: Click on SSH next to the alloydb-client instance to open a terminal window.
 Set the Environment Variable:
-
-bash
-Copy code
+-------------------------------------------------------
 export ALLOYDB=<ALLOYDB_ADDRESS>
 echo $ALLOYDB > alloydbip.txt
 Launch the PostgreSQL (psql) Client:
 
-bash
-Copy code
+-----------------------------------------
 psql -h $ALLOYDB -U postgres
+------------------------------------------
 Enable the pgaudit Extension:
 
 Inside the psql prompt, run the following SQL commands:
 
-sql
-Copy code
+------------------------------------------
 \c postgres
 CREATE EXTENSION IF NOT EXISTS pgaudit;
+-----------------------------------------
 Verify the Extension:
 
-sql
-Copy code
+-----------------------------------------------------------
 SELECT extname, extversion FROM pg_extension WHERE extname = 'pgaudit';
+------------------------------------------------------
 Exit the PostgreSQL Client:
 
-bash
-Copy code
+----------------------------------------
 \q
+-------------------------
 Close the SSH Terminal:
 
-bash
-Copy code
+----------------------
 exit
+-----------------------------
+
+
 Task 3: Create a Read Pool Instance for an Existing Cluster
+-----------------------------------------------------------
 Add a Read Pool Instance:
 
 UI Step: In the Google Cloud Console, navigate to AlloyDB > Clusters.
@@ -58,7 +63,10 @@ UI Step: Set the Read pool instance ID to lab-instance-rp1, the Node count to 2,
 UI Step: Click "Create Read Pool."
 Note: Creating a read pool instance must be done through the Google Cloud Console UI.
 
+----------------------------------------------
 Task 4: Setup Backups
+
+
 Create an On-Demand Backup:
 
 UI Step: In the Google Cloud Console, navigate to AlloyDB > Backups.
@@ -71,9 +79,9 @@ View Backup Details:
 
 After creating the backup, you can view the details using Cloud Shell:
 
-bash
-Copy code
+---------------------------------------------------------
 gcloud beta alloydb backups list
+---------------------------------------
 These steps combine both UI interactions and Cloud Shell commands to guide you through the tasks in your lab environment.
 
 
