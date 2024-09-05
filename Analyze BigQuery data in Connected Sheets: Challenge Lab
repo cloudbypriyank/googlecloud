@@ -1,0 +1,19 @@
+# New York City Taxi Data Analysis
+
+This project involves analyzing taxi data using **Google Sheets** connected with **Google BigQuery**. The following tasks have been assigned to analyze the taxi data in New York City. Each task is broken down into steps to guide the development team through the process.
+
+## Tasks
+
+### Task 1: Connect Google Sheets to a BigQuery Dataset
+1. Open **Google Sheets**.
+2. Navigate to `Data > Data connectors > Connect to BigQuery`.
+3. Select the project `qwiklabs-gcp-04-64a982ab4f6d` and dataset `new_york_taxi_trips`.
+4. Choose the table `tlc_yellow_trips_2022` to connect the dataset to **Google Sheets**.
+
+#### Command to Set Up in Cloud Shell
+```bash
+# Set your project ID
+gcloud config set project [YOUR_PROJECT_ID]
+
+# Enable BigQuery API
+gcloud services enable bigquery.googleapis.com
