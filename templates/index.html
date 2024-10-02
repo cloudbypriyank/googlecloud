@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Video</title>
+</head>
+<body>
+    <h1>Create Video</h1>
+    <form id="videoForm">
+        <textarea id="inputText" placeholder="Enter your script here"></textarea>
+        <button type="button" onclick="createVideo()">Create Video</button>
+    </form>
+
+    <p id="status"></p>
+    <video id="videoPlayer" controls style="display: none;"></video>
+
+    <script>
+        function createVideo() {
+            const inputText = document.getElementById('inputText').value;
+
+            fetch('/create_video', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    input_text: inputText,
+                    // Include other parameters if needed
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Video created:', data);
+                const videoId = data.video_id; // Extract video_id from the response
+                if (videoId) {
+                    checkVideoStatus(videoId);
+                } else {
+                    document.getElementById('status').innerText = "Failed to create video.";
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function checkVideoStatus(videoId) {
+        const statusElement = document.getElementById('status');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        const intervalId = setInterval(() => {
+            fetch(`/get_video_status/${videoId}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log('Video status response:', data);
+                const status = data.data.status;
+
+                if (status === 'completed') {
+                    clearInterval(intervalId);
+                    statusElement.innerText = "Video is ready!";
+                    // Display the video
+                    const videoUrl = data.data.video_url;
+                    if (videoUrl) {
+                        videoPlayer.src = videoUrl;
+                        videoPlayer.style.display = 'block';
+                    } else {
+                        statusElement.innerText = "Video URL not available.";
+                    }
+                } else if (status === 'failed') {
+                    clearInterval(intervalId);
+                    statusElement.innerText = "Video creation failed.";
+                } else {
+                    statusElement.innerText = `Video Status: ${status}`;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }, 5000); // Check every 5 seconds
+    }
+
+</script>
+
+</body>
+</html>
