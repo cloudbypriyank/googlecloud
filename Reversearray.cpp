@@ -12,11 +12,9 @@ int main() {
     
     
     
-    for(int i = 9;i<=size;i--){
+    for(int i = 9;i>=0;i--){
         cout <<  arr[i]  << endl;
-        if(i == 0){
-            break;
-        }
+        
     }
     
  return 0;
