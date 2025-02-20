@@ -1,0 +1,38 @@
+export PROJECT_ID="project id "
+export DATASET_NAME="dataset name "
+export TABLE_NAME="table name "
+export BUCKET_NAME="bucket name"
+export FILE_PATH="gs://bucketname/products.csv"
+--------------------------------------------------
+
+bq load \
+  --source_format=CSV \
+  --autodetect \
+  $PROJECT_ID:$DATASET_NAME.$TABLE_NAME \
+  $FILE_PATH
+-------------------------------------
+bq query --use_legacy_sql=false "
+CREATE SEARCH INDEX idx_product_search
+ON \`$PROJECT_ID.$DATASET_NAME.$TABLE_NAME\`(SKU, name, orderedQuantity, stockLevel, restockingLeadTime);
+"
+--------------------------------------------
+bq query --use_legacy_sql=false "
+SELECT * 
+FROM \`$PROJECT_ID.$DATASET_NAME.products_information\`
+WHERE SEARCH(STRUCT(SKU, name, orderedQuantity, stockLevel, restockingLeadTime), '22 oz Water Bottle');
+"
+------------------------------------------
+### IF YOU GOT ERROR IN LAST CMD THEN RUN THIS CMD 
+
+bq query --use_legacy_sql=false "
+SELECT column_name
+FROM \`$PROJECT_ID.$DATASET_NAME.INFORMATION_SCHEMA.COLUMNS\`
+WHERE table_name = 'products_information';
+"
+-----------------------------------
+bq query --use_legacy_sql=false "
+CREATE SEARCH INDEX IF NOT EXISTS 
+  \`$PROJECT_ID.$DATASET_NAME.products_information_search_index\`
+ON \`$PROJECT_ID.$DATASET_NAME.products_information\` (ALL COLUMNS);
+"
+-------------------------------
