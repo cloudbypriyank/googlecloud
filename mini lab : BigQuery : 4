@@ -1,8 +1,8 @@
-export PROJECT_ID="project id "
-export DATASET_NAME="dataset name "
-export TABLE_NAME="table name "
-export BUCKET_NAME="bucket name"
-export FILE_PATH="gs://bucketname/products.csv"
+export PROJECT_ID="qwiklabs-gcp-02-011aaf7cffe1"
+export DATASET_NAME="products"
+export TABLE_NAME="products_information"
+export BUCKET_NAME="qwiklabs-gcp-02-011aaf7cffe1-bucket"
+export FILE_PATH="gs://qwiklabs-gcp-02-011aaf7cffe1-bucket/products.csv"
 --------------------------------------------------
 
 bq load \
@@ -15,6 +15,12 @@ bq query --use_legacy_sql=false "
 CREATE SEARCH INDEX idx_product_search
 ON \`$PROJECT_ID.$DATASET_NAME.$TABLE_NAME\`(SKU, name, orderedQuantity, stockLevel, restockingLeadTime);
 "
+----------------------------------------
+bq query --use_legacy_sql=false "
+CREATE SEARCH INDEX IF NOT EXISTS 
+  \`$PROJECT_ID.$DATASET_NAME.products_information_search_index\`
+ON \`$PROJECT_ID.$DATASET_NAME.products_information\` (ALL COLUMNS);
+"
 --------------------------------------------
 bq query --use_legacy_sql=false "
 SELECT * 
@@ -22,6 +28,8 @@ FROM \`$PROJECT_ID.$DATASET_NAME.products_information\`
 WHERE SEARCH(STRUCT(SKU, name, orderedQuantity, stockLevel, restockingLeadTime), '22 oz Water Bottle');
 "
 ------------------------------------------
+
+-----------------------------------------------------
 ### IF YOU GOT ERROR IN LAST CMD THEN RUN THIS CMD 
 
 bq query --use_legacy_sql=false "
@@ -30,9 +38,5 @@ FROM \`$PROJECT_ID.$DATASET_NAME.INFORMATION_SCHEMA.COLUMNS\`
 WHERE table_name = 'products_information';
 "
 -----------------------------------
-bq query --use_legacy_sql=false "
-CREATE SEARCH INDEX IF NOT EXISTS 
-  \`$PROJECT_ID.$DATASET_NAME.products_information_search_index\`
-ON \`$PROJECT_ID.$DATASET_NAME.products_information\` (ALL COLUMNS);
-"
--------------------------------
+
+----------------------
