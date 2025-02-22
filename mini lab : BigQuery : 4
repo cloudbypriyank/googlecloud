@@ -1,6 +1,7 @@
+
 export PROJECT_ID=$(gcloud config get-value project)
 export REGION=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-region])")
-export BUCKET_NAME=YOUR BUCKET NAME HERE
+export BUCKET_NAME=qwiklabs-gcp-04-3e86670d2846-bucket
 -----------------------------------------------------
 bq load --source_format=CSV --autodetect products.products_information gs://$BUCKET_NAME/products.csv 
 ----------------------------------------------------------------------------------------------------------
