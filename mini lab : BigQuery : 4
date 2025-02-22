@@ -1,3 +1,19 @@
+export PROJECT_ID=$(gcloud config get-value project)
+export REGION=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-region])")
+export BUCKET_NAME=YOUR BUCKET NAME HERE
+-----------------------------------------------------
+bq load --source_format=CSV --autodetect products.products_information gs://$BUCKET_NAME/products.csv 
+----------------------------------------------------------------------------------------------------------
+bq query --use_legacy_sql=false "CREATE SEARCH INDEX IF NOT EXISTS products.p_i_search_index ON products.products_information (ALL COLUMNS);"
+----------------------------------------------------------------------------------------------------------------------------------
+bq query --use_legacy_sql=false "SELECT * FROM products.products_information WHERE SEARCH(STRUCT(), '22 oz Water Bottle') = TRUE;"
+-------------------------------------------------------------------------------------------
+
+--------------------------------------------------------
+IF YOU GOT ERROR THEN ONLY RUN THIS CMDS : - 
+
+-----------------------------------------------
+
 export PROJECT_ID="ID"
 export DATASET_NAME="products"
 export TABLE_NAME="products_information"
