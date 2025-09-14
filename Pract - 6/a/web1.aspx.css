@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+namespace Practical6a
+{
+    class overloadDemo {
+        public int sum(int a, int b)
+        {
+            return a + b;
+        }
+        public float sum(float a, float b)
+        {
+            return a + b;
+        }
+        public int sum(int a , int b, int c)
+        {
+            return a + b + c;
+        }
+        public float sum (float a ,float b, float c)
+        {
+            return a + b + c;
+        }
+    }
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        overloadDemo obj;
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            obj = new overloadDemo();
+        }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Label1.Text = Convert.ToString("Sum of 2 Integer :"+obj.sum(10, 20));
+            Label2.Text = Convert.ToString("Sum of 2 float : "+obj.sum(10.2f, 20.2f));
+            Label3.Text = Convert.ToString("Sum of 3 Integer : "+obj.sum(10, 20, 30));
+            Label4.Text = Convert.ToString("Sum of 3 Float : "+obj.sum(10.2f, 20.2f, 30.2f));
+        }
+    }
+}
